@@ -1,6 +1,26 @@
 const mongoose=require('mongoose');
 
 const fichasSchema = new mongoose.Schema({
+    especie:{
+        type: [Number],
+        required:true
+    },
+    estados:{
+        type: [Number],
+        required:true
+    },
+    habito:{
+        type: [Number],
+        required:true
+    },
+    color_flor:{
+        type: [Number],
+        required:true
+    },
+    vello_hojas:{
+        type: [Number],
+        required:true
+    },
     numero:{
         type: Number,
         required:true

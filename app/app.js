@@ -2,6 +2,7 @@ const express = require('express');
 const routes = require('./routes/routes');
 const RouteClassification = require('./routes/RouteClassification');
 const RouteFichas = require('./routes/RouteFichas');
+const RouteUsuarios = require('./routes/RouteUsuarios');
 const path = require('path');
 
 const app = express();
@@ -16,5 +17,6 @@ app.use(express.json());
 app.use('/', routes);
 app.use('/clasificacion', RouteClassification);
 app.use('/fichas', RouteFichas);
+app.use('/usuarios', RouteUsuarios);
 
 module.exports = app;/* */

@@ -288,6 +288,139 @@
     border-radius: 15px;
 }
 
+/*////////////////BOTON CONSULTA////////////////////*/
+.buttonColorCons
+{
+    display:inline-flex;
+    padding: 21% 34% 21% 50%;
+    margin: 3% 0% 3% 8%;
+    background: #80B0D2;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 250%;
+    color: #111;
+    transition: 0.9s;
+    background-image: url('../img/busquedaM.png');
+    background-position: center; /* también sirve con: center center */
+    background-repeat: no-repeat;
+          background-size: 45% 90%;
+    cursor: pointer;
+}
+
+/*color cuando se pone cursor sobre el recuadro del numero en SIZE*/
+.buttonColorCons:hover
+{
+    background: #CAE2F0;
+    background-image: url('../img/busquedaM.png');
+    background-position: center; /* también sirve con: center center */
+          background-size: 45% 90%;
+    background-repeat: no-repeat;
+}
+/*////////////////BOTON CONSULTA////////////////////*/
+
+/*/////////////////////////////CARD PREGUNTAS////////////////////////////*/
+.CardPreguntas
+{
+    /*display:inline-flex;*/
+    padding: 15% 11% 25% 11%;
+    /*padding: 21% 38% 21% 50%;*/
+    margin: 2% 7% 3% 6%;
+    background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
+    border-radius: 100px;
+    text-decoration: none;
+    /*
+    background-image: url('../img/busquedaM.png');
+    background-position: center; / también sirve con: center center /
+    background-repeat: no-repeat;
+          background-size: 45% 90%;
+    cursor: pointer;*/
+}
+/*/////////////////////////////CARD Titulo Respuestas////////////////////////////*/
+
+.CardTituloRes
+{
+    /*display:inline-flex;*/
+    padding: 3% 11% 3% 11%;
+    /*padding: 21% 38% 21% 50%;*/
+    margin: 2% 7% 3% 6%;
+    background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
+    border-radius: 70px;
+    text-decoration: none;
+    /*
+    background-image: url('../img/busquedaM.png');
+    background-position: center; / también sirve con: center center /
+    background-repeat: no-repeat;
+          background-size: 45% 90%;
+    cursor: pointer;*/
+}
+.txtRes
+{
+    text-align: center;
+    font-weight: 550;
+    font-size: 4.5vw;
+    cursor:default;
+    color: #ffffff;
+}
+/*/////////////////////////////CARD Titulo Respuestas////////////////////////////*/
+
+/*/////////////////////////////PREGUNTA////////////////////////////*/
+.txtPregunta
+{
+    text-align: center;
+    /*background: #ffffff;*/
+    font-weight: 550;
+    font-size: 3vw;
+    cursor:default;
+    color: #ffffff;
+}
+.ContainerRes{
+    position: absolute;
+    z-index: 10;
+    margin-left: 11%;
+    width: 40vw;
+    height: 25vh;
+    border-radius: 2rem;
+    color: #333;
+    font-family: sans-serif;
+    line-height: 1.3;
+    overflow: auto;
+
+    text-align: center;
+    /*background: red;*/
+    margin-top: 4%;
+
+}
+
+.ContainerRes::-webkit-scrollbar {
+    display: none;
+}
+/*/////////////////////////////PREGUNTA////////////////////////////*/
+
+/*////////////////BOTON RESPUESTAS////////////////////*/
+.buttonColorRes
+{
+    display: inline-flex;
+    margin-top: 2%;
+    padding: 10px 20px;
+    background: rgb(46, 46, 46);
+    color: #ffffff;
+    border-radius: 90px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.3vw;
+    transition: 1s;
+    cursor: pointer;
+}
+
+/*color cuando se pone cursor sobre el recuadro del numero en SIZE*/
+.buttonColorRes:hover
+{
+    background: #ffffff;
+    color: rgb(41, 41, 41);
+}
+/*////////////////BOTON RESPUESTAS////////////////////*/
+
 /*/////////////////////////////estilo de VENTANA/////////////////////////////
 .modal-container
 {
