@@ -42,7 +42,7 @@
 
 .containerC .card:after
 {
-    content: 'Madroños';/*texto de fondo*/
+   /* content: 'Madroños'; texto de fondo*/
     position: absolute;
     top: 30%;
     left: -20%;
@@ -55,18 +55,19 @@
 .containerC .card .imgBx
 {
     position: absolute;
-    top: 50%;
+    padding-right: 92.1%;
+    top: 41%;
     transform: translateY(-50%);
-    z-index: 10000;
-    width: 90%;
-    height: 50%;
-    transition: 0.5s;
+    z-index: 50;
+    width: 85%;
+    height: 20%;
+    transition: 0.4s;
 }
 
 .containerC .card:hover .imgBx
 {
-    top: 0%;
-    transform: translateY(5%);
+    opacity: 0;
+    visibility: hidden;
 }
 
 .containerC .card .imgBx img
@@ -81,32 +82,77 @@
 .containerC .card .contentBx
 {
     position: absolute;
-    bottom: 0;
-    width: 88%;/*ancho de contenedor*/
+    padding-right: 1%;/*alinear el nombre del madroño*/
+    bottom: -5%;
+    width: 91%;/*ancho de contenedor*/
     height: 100px;
-    text-align: center;
+    /*text-align: center;*/
     transition: 1s;
     z-index: 10;
 }
 
 .scroll{
     position: absolute;
+    opacity: 0;
+    visibility: hidden;
     width: 100%;
     height: 81%;
     text-align: center;
     z-index: 10;
     padding: 1rem 0.60rem;
-    border-radius: 4rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    color: #333;
     font-family: sans-serif;
     line-height: 1.3;
     overflow: auto;
 }
 
+.scroll:hover{
+    position: absolute;
+    opacity: 1;
+    visibility:visible;
+    width: 100%;
+    height: 81%;
+    text-align: center;
+    z-index: 10;
+    padding: 1rem 0.60rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-family: sans-serif;
+    line-height: 1.3;
+    overflow: auto;
+}
+
+/* Estilos para scrollbar en body para motores Webkit y blink (Chrome, Safari, Opera... )*/
+.scroll::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .scroll::-webkit-scrollbar:vertical {
+    width:11px;
+  }
+  
+  .scroll::-webkit-scrollbar-button:increment,.scroll::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  .scroll::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.336);
+    border-radius: 20px;
+    border: 2px rgba(255, 255, 255, 0.705);
+  }
+  
+  .scroll::-webkit-scrollbar-track {
+    border-radius: 10px;  
+  }
+  /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+/*oculta la barra para hacer scroll
 .scroll::-webkit-scrollbar {
     display: none;
-}
+}*/
 
 .gradient{
     position: absolute;
@@ -120,15 +166,17 @@
 
 .containerC .card:hover .contentBx
 {
-   height: 60%;
+   height: 100%;
 }
 
 .containerC .card .contentBx .h2
 {
     position: relative;
-    font-size: 140%;/*//////////////////*/
-    font-weight: 650;
-    letter-spacing: 0.6px;
+    width: 100%;
+    font-size: 110%;/*//////////////////*/
+    font-weight: 700;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     cursor: not-allowed;
     pointer-events: none;
@@ -285,7 +333,7 @@
 }
 
 .imgBr{
-    border-radius: 15px;
+    border-radius: 30px;
 }
 
 /*////////////////BOTON CONSULTA////////////////////*/
@@ -312,7 +360,7 @@
 .buttonColorCons:hover
 {
     background: #CAE2F0;
-    background-image: url('../img/busquedaM.png');
+    background-image: url('../img/busquedaMCursor.png');
     background-position: center; /* también sirve con: center center */
           background-size: 45% 90%;
     background-repeat: no-repeat;
@@ -320,48 +368,85 @@
 /*////////////////BOTON CONSULTA////////////////////*/
 
 /*/////////////////////////////CARD PREGUNTAS////////////////////////////*/
-.CardPreguntas
-{
-    /*display:inline-flex;*/
-    padding: 15% 11% 25% 11%;
-    /*padding: 21% 38% 21% 50%;*/
-    margin: 2% 7% 3% 6%;
-    background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
-    border-radius: 100px;
-    text-decoration: none;
-    /*
-    background-image: url('../img/busquedaM.png');
-    background-position: center; / también sirve con: center center /
-    background-repeat: no-repeat;
-          background-size: 45% 90%;
-    cursor: pointer;*/
+.containCards{
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    margin: auto;
+    top: 3%;
+    left: 20%;
+    width: 60%;
+    padding: 2%;
+    min-height: 50%;
+    text-align: justify;
 }
+
+.containCards .CardPreguntas
+{
+    z-index: 2;
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 18% 6% 18% 6%;
+    background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
+    border-radius: 5%;
+    display: grid;
+}
+
+/*responsivo*/
+@media (max-width: 1170px){
+    .containCards{
+        z-index: 1;
+        position: absolute;
+        display: flex;
+        margin: auto;
+        top: 8.5%;
+        left: 20%;
+        width: 60%;
+        padding: 2%;
+        height: auto;
+        min-height: 50%;
+        text-align: justify;
+    }
+    
+    .containCards .CardPreguntas
+    {
+        z-index: 2;
+        position: relative;
+        display: flex;
+        margin: auto;
+        padding: 18% 6% 18% 6%;
+        background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
+        border-radius: 5%;
+        display: grid;
+    }
+
+}
+/*responsivo*/
+/*/////////////////////////////CARD PREGUNTAS////////////////////////////*/
+
 /*/////////////////////////////CARD Titulo Respuestas////////////////////////////*/
 
 .CardTituloRes
 {
-    /*display:inline-flex;*/
-    padding: 3% 11% 3% 11%;
-    /*padding: 21% 38% 21% 50%;*/
-    margin: 2% 7% 3% 6%;
+    z-index: 3;
+    padding: 1% 11% 3% 11%;/*3% 11% 3% 11%*/
+    margin: auto;/*2% 7% 3% 6%*/
     background-image: linear-gradient(-20deg, #6e802e 5%,#2e2e2e 100%);
     border-radius: 70px;
     text-decoration: none;
-    /*
-    background-image: url('../img/busquedaM.png');
-    background-position: center; / también sirve con: center center /
-    background-repeat: no-repeat;
-          background-size: 45% 90%;
-    cursor: pointer;*/
 }
 .txtRes
 {
+    z-index: 4;
     text-align: center;
     font-weight: 550;
     font-size: 4.5vw;
     cursor:default;
     color: #ffffff;
 }
+
+
 /*/////////////////////////////CARD Titulo Respuestas////////////////////////////*/
 
 /*/////////////////////////////PREGUNTA////////////////////////////*/
@@ -375,32 +460,64 @@
     color: #ffffff;
 }
 .ContainerRes{
-    position: absolute;
-    z-index: 10;
-    margin-left: 11%;
-    width: 40vw;
-    height: 25vh;
-    border-radius: 2rem;
+    position: relative;
+    display: flex;
+    margin: auto;
+    height: 30vh;
+    border-radius: 1.5rem;
     color: #333;
-    font-family: sans-serif;
-    line-height: 1.3;
     overflow: auto;
-
-    text-align: center;
+    display: grid;
+    text-align: justify;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    
     /*background: red;*/
-    margin-top: 4%;
+    margin-top: 5%;
+    padding-bottom: 2%;
 
 }
 
+
+/* Estilos para scrollbar en body para motores Webkit y blink (Chrome, Safari, Opera... )*/
+.ContainerRes::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+  
+  .ContainerRes::-webkit-scrollbar:vertical {
+    width:11px;
+  }
+  
+  .ContainerRes::-webkit-scrollbar-button:increment,.ContainerRes::-webkit-scrollbar-button {
+    display: none;
+  } 
+  
+  .ContainerRes::-webkit-scrollbar:horizontal {
+    height: 10px;
+  }
+  
+  .ContainerRes::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.336);
+    border-radius: 20px;
+    border: 2px rgba(255, 255, 255, 0.705);
+  }
+  
+  .ContainerRes::-webkit-scrollbar-track {
+    border-radius: 10px;  
+  }
+  /* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+
+
+/*
 .ContainerRes::-webkit-scrollbar {
     display: none;
-}
+}*/
 /*/////////////////////////////PREGUNTA////////////////////////////*/
 
 /*////////////////BOTON RESPUESTAS////////////////////*/
 .buttonColorRes
 {
-    display: inline-flex;
+    display: flex;
     margin-top: 2%;
     padding: 10px 20px;
     background: rgb(46, 46, 46);
@@ -420,6 +537,39 @@
     color: rgb(41, 41, 41);
 }
 /*////////////////BOTON RESPUESTAS////////////////////*/
+
+/*////////////////BOTON INTENTAR OTRA VEZ////////////////////*/
+.buttonColorOtraVez
+{
+    display: inline-flex;
+    margin-top: 2%;
+    margin-right: 10px;
+    padding: 10px 20px;
+    border-radius: 180px;
+    background: rgb(41, 41, 41);
+    color: #ffffff;
+    border-color: rgb(41, 41, 41);
+    text-decoration: none;
+    font-size: 1vw;
+    font-weight: 600;
+    opacity: 1;
+    /*transform: translateY(0px);*/
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+/*color cuando se pone cursor sobre el recuadro del numero en SIZE*/
+.buttonColorOtraVez:hover
+{
+    border-style: solid;
+    background: none;
+    border-color: rgb(41, 41, 41);
+    color: rgb(41, 41, 41);
+
+}
+
+
+/*////////////////BOTON INTENTAR OTRA VEZ////////////////////*/
 
 /*/////////////////////////////estilo de VENTANA/////////////////////////////
 .modal-container
@@ -619,8 +769,3 @@
     }
 }
 */
-
-
-
-
-

@@ -8,8 +8,39 @@
 }
 
 body{
-  background: #fff;
   font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos para scrollbar en body para motores Webkit y blink (Chrome, Safari, Opera... )*/
+body::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+body::-webkit-scrollbar:vertical {
+  width:11px;
+}
+
+body::-webkit-scrollbar-button:increment,body::-webkit-scrollbar-button {
+  display: none;
+} 
+
+body::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+
+body::-webkit-scrollbar-track {
+  border-radius: 10px;  
+}
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+a:link{
+  text-decoration:none;
 }
 
 /*sidebar*/
@@ -85,8 +116,8 @@ body{
   top: -20px;
   left: calc(100% + 15px);
   z-index: 3;
-  background: #4C5A1E;
-  color: #fff;
+  background: #222222;
+  color: rgb(255, 255, 255);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
   border-radius: 4px;
@@ -308,7 +339,7 @@ body{
 .container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  /*background-color: #fff;*/
   min-height: 100vh;
   overflow: hidden;
 }
@@ -494,6 +525,31 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.panels-container-left {
+  position: absolute;
+  margin-top: -4%;
+  margin-left: -100%;
+  padding-right: 10%;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(1fr, 3);
+}
+
+.panels-container-right {
+  position: absolute;
+  margin-left: 50%;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
 .container:before {
   content: "";
   position: absolute;
@@ -505,7 +561,6 @@ form.sign-in-form {
   background-image: linear-gradient(-100deg, #ca6827 0%,  #c0a52c 40% , #4D793B 100%);
   transition: 1.8s ease-in-out;
   border-radius: 50%;
-  z-index: 6;
 }
 
 .image {
@@ -525,12 +580,12 @@ form.sign-in-form {
 
 .left-panel {
   pointer-events: all;
-  padding: 3rem 17% 2rem 12%;
+  padding: 0%;
 }
 
 .right-panel {
-  pointer-events: none;
-  padding: 3rem 12% 2rem 17%;
+  pointer-events: all;
+  padding: 10%;
 }
 
 .panel .content {
@@ -552,6 +607,7 @@ form.sign-in-form {
 
 .btn.transparent {
   margin: 0;
+  padding: 3%;
   background: none;
   border: 2px solid #fff;
   width: 130px;
@@ -617,7 +673,7 @@ form.sign-in-form {
   }
 
   .signin-signup,
-  .container.sign-up-mode .signin-signup {
+  .container.sign-in-mode .signin-signup {
     left: 50%;
   }
 
@@ -670,6 +726,7 @@ form.sign-in-form {
   }
 
   .container:before {
+    position: absolute;
     width: 1500px;
     height: 1500px;
     transform: translateX(-50%);
@@ -678,9 +735,11 @@ form.sign-in-form {
     right: initial;
     top: initial;
     transition: 2s ease-in-out;
+    z-index: -1;
   }
 
   .container.sign-up-mode:before {
+    position: absolute;
     transform: translate(-50%, 100%);
     bottom: 32%;
     right: initial;
@@ -732,3 +791,242 @@ form.sign-in-form {
     left: 50%;
   }
 }
+
+/*ANALITICS*/
+    .marginSection{
+      margin: 3%;
+    }
+
+    .seccion{
+      display: none;
+    }
+
+    .corriendo .seccion{
+      display: block;
+    }
+
+    .cargando{
+      position: relative;
+      border: none;
+      margin-top: 0.5%;
+      margin-bottom: 1%;
+    }
+
+    .corriendo .cargando{
+      display: none;
+    }
+    
+    /*charts*/
+    .graphBoxGraficaGeneral{
+      position: relative;
+      width: 100%;
+      padding: 2%;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 2%;
+      min-height: 200px;
+    }
+
+    .graphBoxGraficaGeneral .boxGen{
+      position: relative;
+      background: rgb(44, 44, 44);
+      margin-bottom: 2.5%;
+      padding: 5%;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+    }
+
+    .graphBoxGrafica{
+      position: relative;
+      width: 100%;
+      padding: 2%;
+      display: grid;
+      grid-template-columns: 2fr 2fr;
+      grid-gap: 2%;
+      min-height: 200px;
+    }
+
+    .graphBoxGrafica .box{
+      position: relative;
+      background: rgb(44, 44, 44);
+      padding: 5%;
+      width: 100%;
+      box-shadow: 0 7px 25px rgba(29, 156, 29, 0.08);
+      border-radius: 20px;
+    }
+
+    @media (max-width: 991px){
+      .graphBoxGrafica{
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+    }
+
+    .graphBoxLocalizacion{
+      position: relative;
+      width: 100%;
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 6fr;
+      grid-gap: 30px;
+      min-height: 380px;
+    }
+
+    .graphBoxLocalizacion .boxLocal{
+      position: relative;
+      background: #fff;
+      margin-bottom: 2%;
+      padding: 20px;
+      width: 100%;
+      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+      border-radius: 20px;
+    }
+
+    .responsiveTitleChart{
+      font-size: 2vw;
+      color: white;
+      padding-bottom:2%;
+    }
+
+    h1 .barrita{
+      margin-bottom: 2%;
+    }
+
+    /*charts*/
+.details{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+}
+
+.details .recentOrders{
+position: relative;
+display: grid;
+min-height: 500px;
+background: var(--white);
+padding: 20px;
+box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+border-radius: 20px;
+}
+
+/*ANALITICS*/
+
+/*texto No se encontro resultado*/
+.nofound{
+  position: absolute;
+  display: flex;
+  margin: auto;
+  top: 30%;
+  left: 15%;
+  width: 70%;
+  padding: 4%;
+  min-height: 200px;
+  display: grid;/*grid: para colocar un elemento debajo de otro*/
+  text-align: justify;
+}
+
+.nofound .boxfound{
+  position: relative;
+  display: flex;
+  margin: auto;
+  padding: 2%;
+  font-size: 100%;
+  text-align: justify;
+}
+
+/*texto responsivo*/
+@media (max-width: 1168px){
+  .nofound{
+    position: absolute;
+    display: flex;
+    margin: auto;
+    top: 35%;
+    left: 15%;
+    width: 70%;
+    min-height: 150px;
+    display: grid;/*grid: para colocar un elemento debajo de otro*/
+    text-align: justify;
+  }
+  .nofound .boxfound{
+    position: relative;
+    display: flex;
+    margin: auto;
+    text-align: justify;
+    width: auto;
+    justify-content: center;
+  }
+  /*texto responsivo*/
+  
+}
+
+.resConstVolver{
+  position: absolute;
+  display: flex;
+  margin: auto;
+  top: 68%;
+  left: 15%;
+  width: 70%;
+  padding: 4%;
+  min-height: 200px;
+  display: grid;/*grid: para colocar un elemento debajo de otro*/
+  text-align: justify;
+}
+
+.resConstVolver .boxfoundresConstVolver{
+  position: relative;
+  display: flex;
+  margin: auto;
+  padding: 2%;
+  font-size: 100%;
+  text-align: justify;
+}
+/*texto No se encontro resultado*/
+
+/*texto responsivo*/
+@media (max-width: 50%){
+  .resConstVolver{
+    position: absolute;
+    display: flex;
+    margin: auto;
+    top: 100%;
+    left: 15%;
+    width: 70%;
+    padding: 4%;
+    min-height: 200px;
+    display: grid;/*grid: para colocar un elemento debajo de otro*/
+    text-align: justify;
+  }
+  
+  .resConstVolver .boxfoundresConstVolver{
+    position: relative;
+    display: flex;
+    margin: auto;
+    padding: 2%;
+    font-size: 100%;
+    text-align: justify;
+  }
+}
+
+  /*texto responsivo*/
+
+.responsiveTxt{
+  font-size: 2vw;
+}
+
+canvas {
+  width: 100%;
+}
+
+.br{
+  padding-top: 4%;
+}
+
+/*MAPA*/
+#map{
+  height: 90%;
+  width: 100%;
+}
+/*MAPA*/

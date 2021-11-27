@@ -8,9 +8,11 @@
 
   .wrapper-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 19rem);
+    grid-template-columns: repeat(auto-fit, 19.4rem);
     justify-content: center;
     color: var(--clr-gray);
+    margin-top: 2.4%;
+    padding-bottom: 2.4%;
   }
   
   .containerGrid {

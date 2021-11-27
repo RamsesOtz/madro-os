@@ -9,7 +9,7 @@ const fichasSchema = new mongoose.Schema({
         type: [Number],
         required:true
     },
-    habito:{
+    n_habito:{
         type: [Number],
         required:true
     },
